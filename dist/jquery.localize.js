@@ -102,7 +102,7 @@ http://keith-wood.name/localisation.html
       });
     };
     localizeElement = function(elem, key, value) {
-      if (elem.is('input')) {
+      if (elem.is('input') || elem.is('textarea')) {
         localizeInputElement(elem, key, value);
       } else if (elem.is('img')) {
         localizeImageElement(elem, key, value);

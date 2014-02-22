@@ -81,9 +81,9 @@ do ($ = jQuery) ->
         localizeElement(elem, key, value)
 
     localizeElement = (elem, key, value) ->
-      if          elem.is('input')       then localizeInputElement(elem, key, value)
-      else if     elem.is('img')         then localizeImageElement(elem, key, value)
-      else if     elem.is('optgroup')    then localizeOptgroupElement(elem, key, value)
+      if elem.is('input') || elem.is('textarea') then localizeInputElement(elem, key, value)
+      else if elem.is('img') then localizeImageElement(elem, key, value)
+      else if elem.is('optgroup') then localizeOptgroupElement(elem, key, value)
       else unless $.isPlainObject(value) then elem.html(value)
       localizeForSpecialKeys(elem, value) if $.isPlainObject(value)
 

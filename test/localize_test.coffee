@@ -54,6 +54,16 @@ do ($ = jQuery) ->
     t.localize("test", @testOpts)
     equal t.attr("placeholder"), "input success"
 
+  test "textarea tag value substitution", ->
+    t = localizableTagWithRel("textarea", "test.input", val: "input fail")
+    t.localize("test", @testOpts)
+    equal t.val(), "input success"
+
+  test "textarea tag placeholder substitution", ->
+    t = localizableTagWithRel("textarea", "test.input", placeholder: "placeholder fail")
+    t.localize("test", @testOpts)
+    equal t.attr("placeholder"), "input success"
+
   test "titled input tag value substitution", ->
     t = localizableTagWithRel("input", "test.input_as_obj", val: "input_as_obj fail")
     t.localize("test", @testOpts)
